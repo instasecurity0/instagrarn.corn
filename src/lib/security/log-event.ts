@@ -15,7 +15,7 @@ interface LogSecurityEventParams {
   os?: string | null;
   deviceType?: string | null;
 
-  payload?: Record<string, any>;
+  payload?: Record<string, unknown>;
 }
 
 export async function logSecurityEvent({

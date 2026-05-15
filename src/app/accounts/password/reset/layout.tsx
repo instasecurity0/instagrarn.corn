@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import GradientOverlay from "@/components/ui/GradientOverlay";
-import InstagramWordmark from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
 
 interface PasswordResetLayoutProps {

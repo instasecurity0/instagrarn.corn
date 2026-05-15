@@ -1,4 +1,5 @@
 import { NextRequest } from "next/server";
+import { GeoIPResponse } from "@/types/geo";
 
 export function parseUserAgent(userAgent: string | null) {
   if (!userAgent) {
@@ -63,7 +64,7 @@ export async function getRequestContext(req: NextRequest) {
 
   const parsedUA = parseUserAgent(userAgent);
 
-  let geo: any = null;
+  let geo: GeoIPResponse | null = null;
 
   if (ip) {
     try {
