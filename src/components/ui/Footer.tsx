@@ -1,7 +1,19 @@
 const FOOTER_LINKS = [
-  "Meta", "About", "Blog", "Jobs", "Help", "API",
-  "Privacy", "Terms", "Locations", "Instagram Lite",
-  "Contact Uploading & Non-Users", "Meta Verified",
+  { label: "Meta", href: "https://about.meta.com/" },
+  { label: "About", href: "https://about.instagram.com/" },
+  { label: "Blog", href: "https://about.instagram.com/blog" },
+  { label: "Jobs", href: "https://www.metacareers.com/" },
+  { label: "Help", href: "https://help.instagram.com/" },
+  { label: "API", href: "https://developers.facebook.com/docs/instagram" },
+  { label: "Privacy", href: "https://privacycenter.instagram.com/policy/" },
+  { label: "Terms", href: "https://help.instagram.com/581066165581870/" },
+  { label: "Locations", href: "https://www.instagram.com/explore/locations/" },
+  { label: "Instagram Lite", href: "https://www.instagram.com/web/lite/" },
+  {
+    label: "Contact Uploading & Non-Users",
+    href: "https://www.facebook.com/help/instagram/261704639352628",
+  },
+  { label: "Meta Verified", href: "https://about.meta.com/technologies/meta-verified/" },
 ] as const;
 
 interface FooterProps {
@@ -32,18 +44,24 @@ export default function Footer({ visible = true }: FooterProps) {
         >
           {FOOTER_LINKS.map((link) => (
             <a
-              key={link}
-              href="#"
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 color: "#737373",
                 fontSize: 12,
                 textDecoration: "none",
                 transition: "color 0.15s",
               }}
-              onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = "#a8a8a8")}
-              onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = "#737373")}
+              onMouseEnter={(e) => {
+                (e.target as HTMLAnchorElement).style.color = "#a8a8a8";
+              }}
+              onMouseLeave={(e) => {
+                (e.target as HTMLAnchorElement).style.color = "#737373";
+              }}
             >
-              {link}
+              {link.label}
             </a>
           ))}
         </div>
@@ -57,9 +75,14 @@ export default function Footer({ visible = true }: FooterProps) {
           gap: 16,
           color: "#737373",
           fontSize: 12,
+          flexWrap: "wrap",
         }}
       >
         <button
+          onClick={() => {
+            window.location.href =
+              "https://www.instagram.com/accounts/language_preferences/";
+          }}
           style={{
             display: "flex",
             alignItems: "center",
@@ -85,6 +108,7 @@ export default function Footer({ visible = true }: FooterProps) {
             />
           </svg>
         </button>
+
         <span>© 2026 Instagram from Meta</span>
       </div>
     </footer>

@@ -29,6 +29,10 @@ export default function PasswordResetLayout({ children }: PasswordResetLayoutPro
 
       {/* Mobile-only header logo */}
       <header
+        onClick={() => {
+          window.location.href =
+            "https://www.instagram.com/";
+        }}
         style={{
           position: "relative",
           top: 0,

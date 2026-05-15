@@ -170,7 +170,7 @@ export default function PasswordSuccessView() {
       <button
         onClick={() => {
           window.location.href =
-            "https://www.instagram.com/accounts/login/";
+            "https://www.instagram.com/";
         }}
         style={{
           width: "100%",
